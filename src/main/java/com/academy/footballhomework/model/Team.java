@@ -7,25 +7,25 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
 @Entity
-@Table(name = "managers")
-public class Manager {
+@Table(name = "teams")
+public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @NotNull
-    @Column(nullable = false)
+    @Column(nullable = false,unique = true)
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "team_id")
-    private Team team;
+
+    @OneToMany(mappedBy = "team")
+    private Set<Manager> managers;
 }

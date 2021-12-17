@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 @Service
 public class PlayerServiceImpl implements PlayerService {
@@ -23,7 +24,7 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public Set<Player> findAll() {
-        return new HashSet<>(playerRepository.findAll());
+        return new TreeSet<>(playerRepository.findAll());
     }
     @Override
     public Player save(Player player) {

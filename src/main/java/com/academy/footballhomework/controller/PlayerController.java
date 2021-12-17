@@ -5,10 +5,9 @@ import com.academy.footballhomework.dto.PlayerDto;
 import com.academy.footballhomework.model.Player;
 import com.academy.footballhomework.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -37,4 +36,11 @@ public class PlayerController {
         return ResponseEntity.ok(playerDtos);
 
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<HttpStatus> delete(@PathVariable Long id){
+        playerService.delete(id);
+        return ResponseEntity.ok().build();
+
+    }
+
 }

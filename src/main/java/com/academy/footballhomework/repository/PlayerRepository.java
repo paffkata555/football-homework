@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface PlayerRepository extends JpaRepository<Player,Long> {
 
     Optional<Player> findByNumber(Integer number);
+
+    Optional<Player> findById(Long id);
 }

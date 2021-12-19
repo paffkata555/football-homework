@@ -2,13 +2,14 @@ package com.academy.footballhomework.service;
 
 import org.apache.catalina.Manager;
 
-import java.util.Set;
+import java.util.Optional;
 
 public interface ManagerService {
 
     Manager findByName(String name);
 
-    Set<Manager> findAll();
+    Manager findById(Long id);
 
     Manager save (Manager manager);
+
 }

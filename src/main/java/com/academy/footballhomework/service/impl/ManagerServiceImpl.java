@@ -4,16 +4,9 @@ package com.academy.footballhomework.service.impl;
 import com.academy.footballhomework.exception.ResourceNotFoundException;
 import com.academy.footballhomework.repository.ManagerRepository;
 import com.academy.footballhomework.service.ManagerService;
-
-
 import org.apache.catalina.Manager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
-import java.util.TreeSet;
 
 @Service
 public class ManagerServiceImpl implements ManagerService {
